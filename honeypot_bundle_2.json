@@ -1,0 +1,180 @@
+
+{
+    "type": "bundle",
+    "source": "Network Lure Trigger",
+    "incidents": [
+      {
+        "title": "Active Connection to lure - Incident by Network Lure Trigger - Sensor Alpha",
+        "description": "## This is a new Incident, created by a network lure trigger.\n\n",
+        "short_description": "Created by a Network Lure Trigger.",
+        "schema_version": "1.3.5",
+        "type": "incident",
+        "source": "Network Lure Trigger",
+        "status": "Open",
+        "confidence": "High",
+        "techniques": [
+          "T1046"
+        ],
+        "tactics": [
+          "TA0007"
+        ],
+        "incident_time": {
+          "opened": "2023-03-07T18:55:06.000Z"
+        },
+        "id": "transient:xdr-automation-incident-8a94e78941147b81c611616d1414942e7c274555390dd5d972df08c9e51cca8e",
+        "external_ids": [
+          "xdr-automation-incident-8a94e78941147b81c611616d1414942e7c274555390dd5d972df08c9e51cca8e"
+        ],
+        "external_references": [
+          {
+            "source_name": "Cisco XDR APIs",
+            "url": "https://developer.cisco.com/docs/cisco-xdr/"
+          }
+        ],
+        "source_uri": "https://developer.cisco.com/docs/cisco-xdr/"
+      }
+    ],
+    "sightings": [
+      {
+        "title": "Active Service Discovery",
+        "description": "Adversary made an active connection to detection lure.",
+        "id": "transient:xdr-automation-sighting-745673c1be4875c0759ed44ce9f45796f44a7eb57415e8b69ee3da2daebd3334",
+        "external_ids": [
+          "xdr-automation-sighting-745673c1be4875c0759ed44ce9f45796f44a7eb57415e8b69ee3da2daebd3334"
+        ],
+        "severity": "High",
+        "confidence": "High",
+        "observed_time": {
+          "start_time": "2023-08-26T13:31:51.000Z",
+          "end_time": "2023-08-26T13:31:51.000Z"
+        },
+        "source": "Network Based Lure API connection",
+        "observables": [
+          {
+            "value": "Lure Alpha",
+            "type": "hostname"
+          },
+          {
+            "value": "Threat Client",
+            "type": "hostname"
+          }
+        ],
+        "targets": [
+          {
+            "type": "endpoint",
+            "observables": [
+              {
+                "value": "",
+                "type": "ip"
+              },
+              {
+                "value": "Threat Client",
+                "type": "hostname"
+              }
+            ],
+            "observed_time": {
+              "start_time": "2023-08-26T13:31:51.000Z",
+              "end_time": "2023-08-26T13:31:51.000Z"
+            }
+          }
+        ],
+        "relations": [
+          {
+            "origin": "Network Based Lure API connection",
+            "relation": "Connected_To",
+            "source": {
+              "value": "192.168.0.4",
+              "type": "ip"
+            },
+            "related": {
+              "value": "Lure Alpha",
+              "type": "hostname"
+            }
+          },
+          {
+            "origin": "Network Based Lure API connection",
+            "relation": "Connected_To",
+            "source": {
+              "value": "10.2.3.56",
+              "type": "ip"
+            },
+            "related": {
+              "value": "Lure Alpha",
+              "type": "hostname"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Active Service Discovery",
+        "description": "Adversary made an active connection to detection lure.",
+        "id": "transient:xdr-automation-sighting-3a3fa03578733506b6c52466fd28a14f54db81ee592f439fe8adca90cc7c51bd",
+        "external_ids": [
+          "xdr-automation-sighting-3a3fa03578733506b6c52466fd28a14f54db81ee592f439fe8adca90cc7c51bd"
+        ],
+        "severity": "High",
+        "confidence": "High",
+        "observed_time": {
+          "start_time": "2023-08-26T13:31:51.000Z",
+          "end_time": "2023-08-26T13:31:51.000Z"
+        },
+        "source": "Cisco XDR Analytics (my-org)",
+        "observables": [
+          {
+            "value": "10.2.3.56",
+            "type": "ip"
+          },
+          {
+            "value": "Lure Alpha",
+            "type": "hostname"
+          }
+        ],
+        "targets": [
+          {
+            "type": "endpoint",
+            "observables": [
+              {
+                "value": "192.168.0.4",
+                "type": "ip"
+              },
+              {
+                "value": "Lure Alpha",
+                "type": "hostname"
+              }
+            ],
+            "observed_time": {
+              "start_time": "2023-08-26T13:31:51.000Z",
+              "end_time": "2023-08-26T13:31:51.000Z"
+            }
+          }
+        ],
+        "relations": [
+          {
+            "origin": "Cisco XDR Analytics (my-org)",
+            "relation": "Connected_To",
+            "source": {
+              "value": "",
+              "type": "ip"
+            },
+            "related": {
+              "value": "Lure Alpha",
+              "type": "hostname"
+            }
+          }
+        ]
+      }
+    ],
+    "indicators": [],
+    "relationships": [
+      {
+        "schema_version": "1.2.2",
+        "target_ref": "transient:xdr-automation-incident-8a94e78941147b81c611616d1414942e7c274555390dd5d972df08c9e51cca8e",
+        "type": "relationship",
+        "source": "Cisco XDR Automation",
+        "source_ref": "transient:xdr-automation-sighting-745673c1be4875c0759ed44ce9f45796f44a7eb57415e8b69ee3da2daebd3334",
+        "timestamp": "2023-03-07T18:55:10.655Z",
+        "relationship_type": "member-of",
+        "id": "transient:xdr-automation-relationship-54c8f5c24c6b18aea4f1f4d2acaed1e7c9eba3b61734c9ed16b84712bf9801ca"
+      }
+    ]
+  }
